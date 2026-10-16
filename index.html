@@ -25,7 +25,14 @@
         <a href="#teknologi">Teknologi</a>
         <a href="#cara-kerja">Cara Kerja</a>
         <a href="#produk">Produk</a>
-        <a href="#mvp">Monitoring</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="feature-menu">Fitur <span aria-hidden="true">⌄</span></button>
+          <div class="nav-dropdown-menu" id="feature-menu">
+            <a href="#monitoring"><span class="dropdown-icon">▥</span><span><strong>Monitoring</strong><small>Pantau pH, TDS, dan suhu</small></span></a>
+            <a href="#cara-kerja"><span class="dropdown-icon">▤</span><span><strong>Panduan penggunaan</strong><small>Alur kerja perangkat</small></span></a>
+            <a href="#kontak"><span class="dropdown-icon">?</span><span><strong>Bantuan & FAQ</strong><small>Informasi produk</small></span></a>
+          </div>
+        </div>
         <a class="nav-cta" href="#kontak">Hubungi Kami <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -123,7 +130,7 @@
       </div>
     </section>
 
-<section class="section mvp-section" id="mvp"><div class="container">
+<section class="section mvp-section" id="monitoring"><div class="container">
 <div class="mvp-heading"><div><span class="section-eyebrow">SMART GREEN SIDEYARD · MVP</span><h2>Pantau kondisi hidroponik.</h2><p>Ringkasan pH, TDS, dan suhu air. Angka contoh ditampilkan sampai telemetri sensor terhubung.</p></div><div class="mvp-actions"><span class="mvp-demo-badge"><i></i><span id="mvpConnection">Mode demo</span></span><button class="mvp-refresh" id="mvpRefresh" type="button">Perbarui ↻</button></div></div>
 <div class="mvp-notice" role="status"><span class="mvp-notice-icon">i</span><div><strong id="mvpStatusTitle">Dashboard siap dalam mode demo</strong><p id="mvpStatusText">Angka berikut merupakan data contoh, bukan pembacaan sensor langsung.</p></div><time id="mvpUpdated">Belum diperbarui</time></div>
 <div class="mvp-metrics">
