@@ -68,6 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     menu.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{dropdown.classList.remove("is-open");toggle.setAttribute("aria-expanded","false")}));
   }
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    link.addEventListener("click",()=>{
+      const target=link.getAttribute("href");
+      if(target && target!=="#monitoring"){
+        document.body.classList.remove("monitoring-view");
+        document.title="Bondan Green — Smart Green Sideyard";
+      }
+    });
+  });
   window.addEventListener("hashchange",route);
   route();
 });
