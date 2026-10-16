@@ -25,6 +25,7 @@
         <a href="#teknologi">Teknologi</a>
         <a href="#cara-kerja">Cara Kerja</a>
         <a href="#produk">Produk</a>
+        <a href="#mvp">Monitoring</a>
         <a class="nav-cta" href="#kontak">Hubungi Kami <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -122,6 +123,18 @@
       </div>
     </section>
 
+<section class="section mvp-section" id="mvp"><div class="container">
+<div class="mvp-heading"><div><span class="section-eyebrow">SMART GREEN SIDEYARD · MVP</span><h2>Pantau kondisi hidroponik.</h2><p>Ringkasan pH, TDS, dan suhu air. Angka contoh ditampilkan sampai telemetri sensor terhubung.</p></div><div class="mvp-actions"><span class="mvp-demo-badge"><i></i><span id="mvpConnection">Mode demo</span></span><button class="mvp-refresh" id="mvpRefresh" type="button">Perbarui ↻</button></div></div>
+<div class="mvp-notice" role="status"><span class="mvp-notice-icon">i</span><div><strong id="mvpStatusTitle">Dashboard siap dalam mode demo</strong><p id="mvpStatusText">Angka berikut merupakan data contoh, bukan pembacaan sensor langsung.</p></div><time id="mvpUpdated">Belum diperbarui</time></div>
+<div class="mvp-metrics">
+<article class="mvp-card" id="mvpCardPh"><div class="mvp-card-top"><span class="mvp-symbol">pH</span><span class="mvp-state" id="mvpPhState">Demo</span></div><small>Tingkat keasaman</small><div class="mvp-value"><strong id="mvpPh">6.2</strong><span>pH</span></div><div class="mvp-meter"><span id="mvpPhMeter" style="width:62%"></span></div><div class="mvp-foot"><span>Contoh ambang 5.5–6.5</span><b id="mvpPhHint">Dalam rentang</b></div></article>
+<article class="mvp-card" id="mvpCardTds"><div class="mvp-card-top"><span class="mvp-symbol">≈</span><span class="mvp-state" id="mvpTdsState">Demo</span></div><small>Kepekatan nutrisi</small><div class="mvp-value"><strong id="mvpTds">840</strong><span>ppm</span></div><div class="mvp-meter"><span id="mvpTdsMeter" style="width:56%"></span></div><div class="mvp-foot"><span>Contoh ambang 560–840 ppm</span><b id="mvpTdsHint">Dalam rentang</b></div></article>
+<article class="mvp-card" id="mvpCardTemp"><div class="mvp-card-top"><span class="mvp-symbol">°</span><span class="mvp-state" id="mvpTempState">Demo</span></div><small>Suhu air</small><div class="mvp-value"><strong id="mvpTemp">25.4</strong><span>°C</span></div><div class="mvp-meter"><span id="mvpTempMeter" style="width:51%"></span></div><div class="mvp-foot"><span>Contoh ambang 20–30 °C</span><b id="mvpTempHint">Dalam rentang</b></div></article></div>
+<p class="mvp-disclaimer">Rentang di atas hanya contoh antarmuka, bukan rekomendasi universal. Sesuaikan dengan tanaman dan fase pertumbuhan. MVP adalah monitoring dan peringatan; koreksi nutrisi tetap manual.</p>
+<div class="mvp-lower"><div class="mvp-chart-card"><div class="mvp-chart-head"><div><span class="section-eyebrow">TREN PEMBACAAN</span><h3>Riwayat sensor</h3></div><label>Parameter<select id="mvpChartParam"><option value="ph">pH</option><option value="tds">TDS (ppm)</option><option value="temp">Suhu (°C)</option></select></label></div><div class="mvp-chart"><svg id="mvpChart" viewBox="0 0 640 190" role="img" aria-label="Grafik riwayat pembacaan sensor"></svg></div><div class="mvp-chart-foot"><span><i></i><b id="mvpLegend">pH</b></span><span id="mvpHistoryCount">0 pembacaan</span></div></div>
+<aside class="mvp-alert-card"><span class="section-eyebrow">PERINGATAN</span><h3>Status parameter</h3><div id="mvpAlerts"><p>Belum ada peringatan.</p></div><div class="mvp-manual-note"><strong>Tindak lanjut manual</strong><p>Jika nilai melewati ambang, periksa sensor dan kondisi tandon sebelum melakukan koreksi.</p></div></aside></div>
+<div class="mvp-connection"><div><span class="section-eyebrow">INTEGRASI PERANGKAT</span><h3>ESP32 · Wi-Fi · Blynk</h3><p>Bagian ini siap untuk integrasi backend. Token Blynk harus disimpan di server, bukan JavaScript publik.</p></div><div class="mvp-connection-info"><span>Status perangkat</span><strong id="mvpDeviceStatus">Demo / belum terhubung</strong><span>Sumber data</span><strong id="mvpSource">Data contoh lokal</strong></div></div>
+</div></section>
     <section class="product-section" id="produk">
       <div class="container product-panel">
         <div class="product-image"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1100&q=85" alt="Aktivitas berkebun dan perawatan tanaman" loading="lazy"><span class="image-index">BONDAN GREEN / 001</span></div>
