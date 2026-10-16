@@ -250,9 +250,3 @@ body.monitoring-view .site-footer{background:#fff}
 body.monitoring-view .back-top{display:none}
 @media(max-width:900px){.site-nav{gap:12px}.nav-dropdown-menu{right:-40px}}
 @media(max-width:720px){.nav-dropdown{width:100%;display:block}.nav-dropdown-toggle{width:100%;justify-content:space-between;text-align:left;padding:10px 0}.nav-dropdown-menu{position:static;width:100%;margin:3px 0 8px;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;border-radius:7px}.nav-dropdown.is-open .nav-dropdown-menu{display:block}.nav-dropdown-menu:before{display:none}body.monitoring-view .mvp-section{padding-top:30px}body.monitoring-view .mvp-heading h2{font-size:32px}}
-
-/* Route isolation fix: keep only the selected view visible */
-body.monitoring-view main > section:not(#monitoring){display:none!important}
-body.monitoring-view main > #monitoring{display:block!important}
-body.monitoring-view .site-footer{display:block}
-body.monitoring-view .hero-bottom-line{display:none}
