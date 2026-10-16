@@ -35,3 +35,39 @@ document.addEventListener("DOMContentLoaded", () => {
  for(let i=0;i<6;i++){current={ph:+(6.05+i*.025).toFixed(2),tds:790+i*8,temp:+(25.1+i*.1).toFixed(1)};record()}
  $("mvpRefresh").addEventListener("click",refresh);$("mvpChartParam").addEventListener("change",chart);render();
 });
+
+/* Feature menu and lightweight in-page route for the monitoring screen */
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdown=document.querySelector(".nav-dropdown");
+  const toggle=document.querySelector(".nav-dropdown-toggle");
+  const menu=document.querySelector("#feature-menu");
+  const monitoring=document.querySelector("#monitoring");
+  const mainSections=[...document.querySelectorAll("main > section")];
+  function route(){
+    const isMonitoring=location.hash==="#monitoring";
+    document.body.classList.toggle("monitoring-view",isMonitoring);
+    if(isMonitoring){
+      document.title="Monitoring Hidroponik — Bondan Green";
+      if(monitoring) window.scrollTo({top:0,behavior:"smooth"});
+    }else{
+      document.title="Bondan Green — Smart Green Sideyard";
+    }
+    if(dropdown){dropdown.classList.remove("is-open");toggle?.setAttribute("aria-expanded","false")}
+  }
+  if(dropdown&&toggle&&menu){
+    toggle.addEventListener("click",event=>{
+      event.stopPropagation();
+      const open=dropdown.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded",String(open));
+    });
+    document.addEventListener("click",event=>{
+      if(!dropdown.contains(event.target)){dropdown.classList.remove("is-open");toggle.setAttribute("aria-expanded","false")}
+    });
+    document.addEventListener("keydown",event=>{
+      if(event.key==="Escape"){dropdown.classList.remove("is-open");toggle.setAttribute("aria-expanded","false");toggle.focus()}
+    });
+    menu.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{dropdown.classList.remove("is-open");toggle.setAttribute("aria-expanded","false")}));
+  }
+  window.addEventListener("hashchange",route);
+  route();
+});
