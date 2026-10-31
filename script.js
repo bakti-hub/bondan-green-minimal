@@ -4,18 +4,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("#site-nav");
 
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
+    // Toggle menu saat button diklik
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation(); // Mencegah event bubbling
       const open = nav.classList.toggle("is-open");
+      toggle.classList.toggle("is-active", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Tutup navigasi" : "Buka navigasi");
     });
 
+    // Tutup menu saat klik link
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         nav.classList.remove("is-open");
+        toggle.classList.remove("is-active");
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Buka navigasi");
       });
+    });
+
+    // Tutup menu saat klik di luar area menu
+    document.addEventListener("click", (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove("is-open");
+        toggle.classList.remove("is-active");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Buka navigasi");
+      }
+    });
+
+    // Tutup menu saat tekan Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        nav.classList.remove("is-open");
+        toggle.classList.remove("is-active");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Buka navigasi");
+        toggle.focus();
+      }
     });
   }
 
